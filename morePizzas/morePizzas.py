@@ -1,19 +1,19 @@
-def solve(m, n, slices):
+def solve(M, N, slices):
 
     total = 0
-    pos = []
+    pizzasToOrder = []
 
-    for i in range(n - 1, -1, -1):
-        if total + slices[i] <= m:
+    for i in range(N - 1, -1, -1):
+        if total + slices[i] <= M:
             total += slices[i]
-            pos.append(i)
+            pizzasToOrder.append(i)
 
-        if total == m:
+        if total == M:
             break
 
-    pos.reverse()
+    pizzasToOrder.reverse()
 
-    return pos
+    return pizzasToOrder
 
 
 def process(fileName):
